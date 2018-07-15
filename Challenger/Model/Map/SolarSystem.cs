@@ -2,7 +2,7 @@
 
 namespace Challenger.Model.Map
 {
-    public class System
+    public class SolarSystem
     {
         public string Name { get; set; }
 

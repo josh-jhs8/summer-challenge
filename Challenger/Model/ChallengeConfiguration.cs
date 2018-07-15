@@ -8,7 +8,7 @@
 
     public class ChallengeConfiguration
     {
-        public List<System> Systems { get; set; }
+        public List<SolarSystem> SolarSystems { get; set; }
 
         public List<Ship> Ships { get; set; }
 
