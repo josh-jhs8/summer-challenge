@@ -9,8 +9,13 @@ namespace Challenger
 {
     class Program
     {
+        private static string _configPath;
+
         static void Main(string[] args)
         {
+            if (args.Length < 1) throw new Exception("Configuration not provided.");
+            _configPath = args[0];
+
             var listener = ListenForConnections();
             Console.WriteLine("Press Enter to kill server");
             Console.ReadLine();
@@ -20,7 +25,7 @@ namespace Challenger
         {
             return Task.Run(() =>
             {
-                var host = Dns.GetHostEntry(Dns.GetHostName());
+                var host = Dns.GetHostEntry("localhost");
                 var ipAddress = host.AddressList[host.AddressList.Length - 1];
                 var localEndpoint = new IPEndPoint(ipAddress, 2092);
 
@@ -43,7 +48,7 @@ namespace Challenger
             return Task.Run(() =>
             {
                 Console.WriteLine("New Connection means new Challenge!");
-                var config = ChallengeConfiguration.GetChallengeConfiguration(@"C:\Users\joshj\Source\Challenger\Challenger\ChallengeConfiguration.json");
+                var config = ChallengeConfiguration.GetChallengeConfiguration(_configPath);
                 var manager = new ChallengeManager(config);
                 while (true)
                 {
