@@ -24,6 +24,8 @@ namespace Challenger.Logic
         {
             try
             {
+                if (command.Action == "List") return List();
+
                 if (command.Type != "Ship") throw new Exception("This is not a valid command for a ship.");
                 if (!_config.Ships.Any(s => s.Name == command.Subject)) throw new Exception("This ship does not exist.");
 
@@ -75,6 +77,18 @@ namespace Challenger.Logic
                 Message = $"Sucessfully observed {system.Name}",
                 ResultObjectJson = JsonConvert.SerializeObject(system),
                 ResultObjectType = typeof(SolarSystem)
+            };
+        }
+
+        private CommandResultDto List()
+        {
+            var ships = _config.Ships.Select(s => s.Name).ToList();
+            return new CommandResultDto
+            {
+                Success = true,
+                Message = "Listing all current ships",
+                ResultObjectJson = JsonConvert.SerializeObject(ships),
+                ResultObjectType = typeof(List<string>)
             };
         }
     }
