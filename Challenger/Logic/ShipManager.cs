@@ -82,13 +82,12 @@ namespace Challenger.Logic
 
         private CommandResultDto List()
         {
-            var ships = _config.Ships.Select(s => s.Name).ToList();
             return new CommandResultDto
             {
                 Success = true,
                 Message = "Listing all current ships",
-                ResultObjectJson = JsonConvert.SerializeObject(ships),
-                ResultObjectType = typeof(List<string>)
+                ResultObjectJson = JsonConvert.SerializeObject(_config.Ships),
+                ResultObjectType = typeof(List<Ship>)
             };
         }
     }
