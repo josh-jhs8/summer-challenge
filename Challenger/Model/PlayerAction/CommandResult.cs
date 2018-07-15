@@ -1,11 +1,11 @@
 ﻿namespace Challenger.Model.PlayerAction
 {
-    public class CommandResult<T>
+    public class CommandResult
     {
         public bool Success { get; set; }
 
         public string Message { get; set; }
 
-        public T ResultObject { get; set; }
+        public dynamic ResultObject { get; set; }
     }
 }

@@ -2,7 +2,10 @@
 using Challenger.Model.PlayerAction;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Challenger.Logic
 {
@@ -43,11 +46,17 @@ namespace Challenger.Logic
         private byte[] ParseCommandResult(CommandResultDto dto)
         {
             var resultObject = JsonConvert.DeserializeObject(dto.ResultObjectJson, dto.ResultObjectType);
-            var commandResultType = typeof(CommandResult<>).MakeGenericType(dto.ResultObjectType);
-            dynamic commandResult = Activator.CreateInstance(commandResultType);
-            commandResult.Success = dto.Success;
-            commandResult.Message = dto.Message;
-            commandResult.ResultObject = resultObject;
+            //var commandResultType = typeof(CommandResult<>).MakeGenericType(dto.ResultObjectType);
+            //dynamic commandResult = Activator.CreateInstance(commandResultType);
+            //commandResult.Success = dto.Success;
+            //commandResult.Message = dto.Message;
+
+            var commandResult = new CommandResult()
+            {
+                Success = dto.Success,
+                Message = dto.Message,
+                ResultObject = resultObject
+            };
 
             var json = JsonConvert.SerializeObject(commandResult);
             return Encoding.UTF8.GetBytes(json);

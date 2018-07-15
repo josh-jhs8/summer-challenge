@@ -47,12 +47,25 @@ namespace Challenger
                 var manager = new ChallengeManager(config);
                 while (true)
                 {
-                    byte[] data = new byte[1000000];
-                    var dataSize = connection.Receive(data);
-                    byte[] command = new byte[dataSize];
-                    Array.Copy(data, command, dataSize);
-                    var response = manager.ProcessCommand(command);
-                    connection.Send(response);
+                    try
+                    {
+                        byte[] data = new byte[1000000];
+                        var dataSize = connection.Receive(data);
+
+                        if (!connection.Connected) break;
+                        if (dataSize == 0) continue;
+
+                        byte[] command = new byte[dataSize];
+                        Array.Copy(data, command, dataSize);
+                        var response = manager.ProcessCommand(command);
+                        connection.Send(response);
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Connection died!");
+                        break;
+                    }
+                    
                 }
             });
         }
