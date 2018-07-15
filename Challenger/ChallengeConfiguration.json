@@ -1,0 +1,73 @@
+﻿{
+  "Systems": [
+    {
+      "Name": "Alpha System",
+      "Stars": [
+        {
+          "Name": "Star Alpha 1"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Planet Alpha 1"
+        },
+        {
+          "Name": "Planet Alpha 2"
+        }
+      ],
+      "Hyperlanes": [
+        "Beta System",
+        "Gamma System"
+      ]
+    },
+    {
+      "Name": "Beta System",
+      "Stars": [
+        {
+          "Name": "Beta Star 1"
+        },
+        {
+          "Name": "Beta Star 2"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Beta Planet 1"
+        }
+      ],
+      "Hyperlanes": [
+        "Alpha System",
+        "Gamma System"
+      ]
+    },
+    {
+      "Name": "Gamma System",
+      "Stars": [
+        {
+          "Name": "Gamma Star 1"
+        },
+        {
+          "Name": "Gamma Star 2"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Gamma Planet 1"
+        },
+        {
+          "Name": "Gamma Planet 2"
+        }
+      ],
+      "Hyperlanes": [
+        "Alpha System",
+        "Beta System"
+      ]
+    }
+  ],
+  "Ships": [
+    {
+      "Name": "Player Ship 1",
+      "Location": "Alpha System"
+    }
+  ]
+}
