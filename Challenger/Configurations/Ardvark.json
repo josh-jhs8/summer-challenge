@@ -1,0 +1,185 @@
+﻿{
+  "SolarSystems": [
+    {
+      "Name": "Sol",
+      "Stars": [
+        {
+          "Name": "Sol"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Mercury"
+        },
+        {
+          "Name": "Venus"
+        },
+        {
+          "Name": "Earth"
+        },
+        {
+          "Name": "Mars"
+        },
+        {
+          "Name": "Jupiter"
+        },
+        {
+          "Name": "Saturn"
+        },
+        {
+          "Name": "Uranus"
+        },
+        {
+          "Name": "Neptune"
+        }
+      ],
+      "Hyperlanes": [
+        "Orion",
+        "Taurus",
+        "Scorpio"
+      ]
+    },
+    {
+      "Name": "Orion",
+      "Stars": [
+        {
+          "Name": "Orion Alpha"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Orion Alpha I"
+        }
+      ],
+      "Hyperlanes": [
+        "Sol",
+        "Gemini",
+        "Athena"
+      ]
+    },
+    {
+      "Name": "Gemini",
+      "Stars": [
+        {
+          "Name": "Gemini Alpha"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Gemini Alpha I"
+        },
+        {
+          "Name": "Gemini Alpha II"
+        },
+        {
+          "Name": "Gemini Alpha III"
+        }
+      ],
+      "Hyperlanes": [
+        "Orion",
+        "Taurus",
+        "Virgo"
+      ]
+    },
+    {
+      "Name": "Taurus",
+      "Stars": [
+        {
+          "Name": "Taurus Alpha"
+        },
+        {
+          "Name": "Taurus Beta"
+        }
+      ],
+      "Planets": [],
+      "Hyperlanes": [
+        "Gemini",
+        "Sol",
+        "Libra"
+      ]
+    },
+    {
+      "Name": "Scorpio",
+      "Stars": [
+        {
+          "Name": "Scorpio Alpha"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Scorpio Alpha Ia"
+        },
+        {
+          "Name": "Scorpio Alpha Ib"
+        }
+      ],
+      "Hyperlanes": [
+        "Athena",
+        "Libra",
+        "Sol"
+      ]
+    },
+    {
+      "Name": "Athena",
+      "Stars": [
+        {
+          "Name": "Mother of Wisdom"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Medusa"
+        },
+        {
+          "Name": "Artemis"
+        }
+      ],
+      "Hyperlanes": [
+        "Scorpio",
+        "Virgo",
+        "Orion"
+      ]
+    },
+    {
+      "Name": "Virgo",
+      "Stars": [
+        {
+          "Name": "Virgo Alpha"
+        }
+      ],
+      "Planets": [],
+      "Hyperlanes": [
+        "Virgo",
+        "Libra",
+        "Gemini"
+      ]
+    },
+    {
+      "Name": "Libra",
+      "Stars": [
+        {
+          "Name": "Libra Alpha"
+        }
+      ],
+      "Planets": [
+        {
+          "Name": "Yin"
+        },
+        {
+          "Name": "Yang"
+        }
+      ],
+      "Hyperlanes": [
+        "Virgo",
+        "Scorpio",
+        "Taurus"
+      ]
+    }
+  ],
+  "Ships": [
+    {
+      "Name": "HMS Britannia",
+      "Location": "Sol"
+    }
+  ]
+}

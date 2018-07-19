@@ -1,0 +1,116 @@
+﻿{
+  "SolarSystems": [
+    {
+      "Name": "Head",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Neck"
+      ]
+    },
+    {
+      "Name": "Neck",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Neck",
+        "Left Shoulder",
+        "Right Shoulder",
+        "Torso"
+      ]
+    },
+    {
+      "Name": "Left Shoulder",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Neck",
+        "Left Arm"
+      ]
+    },
+    {
+      "Name": "Right Shoulder",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Neck",
+        "Right Arm"
+      ]
+    },
+    {
+      "Name": "Right Arm",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Right Shoulder"
+      ]
+    },
+    {
+      "Name": "Left Arm",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Left Shoulder"
+      ]
+    },
+    {
+      "Name": "Torso",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Neck",
+        "Hips"
+      ]
+    },
+    {
+      "Name": "Hips",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Torso",
+        "Left Knee",
+        "Right Knee"
+      ]
+    },
+    {
+      "Name": "Left Knee",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Hips",
+        "Left Foot"
+      ]
+    },
+    {
+      "Name": "Right Knee",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Hips",
+        "Right Foot"
+      ]
+    },
+    {
+      "Name": "Left Foot",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Left Knee"
+      ]
+    },
+    {
+      "Name": "Right Foot",
+      "Stars": [],
+      "Planets": [],
+      "Hyperlanes": [
+        "Right Knee"
+      ]
+    }
+  ],
+  "Ships": [
+    {
+      "Name": "Micro Explorer the First",
+      "Location": "Head"
+    }
+  ]
+}

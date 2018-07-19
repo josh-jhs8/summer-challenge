@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ChallengeConfiguration.json" />
+    <None Include="Configurations\Ardvark.json" />
+    <None Include="Configurations\Baboon.json" />
+    <None Include="Configurations\Basic.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
