@@ -65,8 +65,10 @@ namespace Challenger
                         var response = manager.ProcessCommand(command);
                         connection.Send(response);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
+                        connection.Close();
+                        Console.WriteLine(e.Message);
                         Console.WriteLine("Connection died!");
                         break;
                     }
