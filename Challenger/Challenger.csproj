@@ -48,6 +48,7 @@
     <Compile Include="Logic\ChallengeManager.cs" />
     <Compile Include="Logic\CommandResultDto.cs" />
     <Compile Include="Logic\ShipManager.cs" />
+    <Compile Include="Model\Map\Location.cs" />
     <Compile Include="Model\PlayerAction\Command.cs" />
     <Compile Include="Model\ChallengeConfiguration.cs" />
     <Compile Include="Model\Map\Planet.cs" />

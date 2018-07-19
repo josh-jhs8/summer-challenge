@@ -6,7 +6,11 @@
       "Planets": [],
       "Hyperlanes": [
         "Neck"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "0"
+      }
     },
     {
       "Name": "Neck",
@@ -17,7 +21,11 @@
         "Left Shoulder",
         "Right Shoulder",
         "Torso"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Left Shoulder",
@@ -26,7 +34,11 @@
       "Hyperlanes": [
         "Neck",
         "Left Arm"
-      ]
+      ],
+      "Location": {
+        "X": "-1",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Right Shoulder",
@@ -35,7 +47,11 @@
       "Hyperlanes": [
         "Neck",
         "Right Arm"
-      ]
+      ],
+      "Location": {
+        "X": "1",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Right Arm",
@@ -43,7 +59,11 @@
       "Planets": [],
       "Hyperlanes": [
         "Right Shoulder"
-      ]
+      ],
+      "Location": {
+        "X": "2",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Left Arm",
@@ -51,7 +71,11 @@
       "Planets": [],
       "Hyperlanes": [
         "Left Shoulder"
-      ]
+      ],
+      "Location": {
+        "X": "-2",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Torso",
@@ -60,7 +84,11 @@
       "Hyperlanes": [
         "Neck",
         "Hips"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "-2"
+      }
     },
     {
       "Name": "Hips",
@@ -70,7 +98,11 @@
         "Torso",
         "Left Knee",
         "Right Knee"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "-3"
+      }
     },
     {
       "Name": "Left Knee",
@@ -79,7 +111,11 @@
       "Hyperlanes": [
         "Hips",
         "Left Foot"
-      ]
+      ],
+      "Location": {
+        "X": "-1",
+        "Y": "-4"
+      }
     },
     {
       "Name": "Right Knee",
@@ -88,7 +124,11 @@
       "Hyperlanes": [
         "Hips",
         "Right Foot"
-      ]
+      ],
+      "Location": {
+        "X": "1",
+        "Y": "-4"
+      }
     },
     {
       "Name": "Left Foot",
@@ -96,7 +136,11 @@
       "Planets": [],
       "Hyperlanes": [
         "Left Knee"
-      ]
+      ],
+      "Location": {
+        "X": "-2",
+        "Y": "-5"
+      }
     },
     {
       "Name": "Right Foot",
@@ -104,7 +148,11 @@
       "Planets": [],
       "Hyperlanes": [
         "Right Knee"
-      ]
+      ],
+      "Location": {
+        "X": "2",
+        "Y": "-5"
+      }
     }
   ],
   "Ships": [

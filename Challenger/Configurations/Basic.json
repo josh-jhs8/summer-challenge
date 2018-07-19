@@ -18,7 +18,11 @@
       "Hyperlanes": [
         "Beta System",
         "Gamma System"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "0"
+      }
     },
     {
       "Name": "Beta System",
@@ -38,7 +42,11 @@
       "Hyperlanes": [
         "Alpha System",
         "Gamma System"
-      ]
+      ],
+      "Location": {
+        "X": "1",
+        "Y": "0"
+      }
     },
     {
       "Name": "Gamma System",
@@ -61,7 +69,11 @@
       "Hyperlanes": [
         "Alpha System",
         "Beta System"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "1"
+      }
     }
   ],
   "Ships": [

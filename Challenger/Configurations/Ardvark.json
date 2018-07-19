@@ -37,7 +37,11 @@
         "Orion",
         "Taurus",
         "Scorpio"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "0"
+      }
     },
     {
       "Name": "Orion",
@@ -55,7 +59,11 @@
         "Sol",
         "Gemini",
         "Athena"
-      ]
+      ],
+      "Location": {
+        "X": "1",
+        "Y": "0"
+      }
     },
     {
       "Name": "Gemini",
@@ -79,7 +87,11 @@
         "Orion",
         "Taurus",
         "Virgo"
-      ]
+      ],
+      "Location": {
+        "X": "1",
+        "Y": "1"
+      }
     },
     {
       "Name": "Taurus",
@@ -96,7 +108,11 @@
         "Gemini",
         "Sol",
         "Libra"
-      ]
+      ],
+      "Location": {
+        "X": "0",
+        "Y": "1"
+      }
     },
     {
       "Name": "Scorpio",
@@ -117,7 +133,11 @@
         "Athena",
         "Libra",
         "Sol"
-      ]
+      ],
+      "Location": {
+        "X": "-1",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Athena",
@@ -138,7 +158,11 @@
         "Scorpio",
         "Virgo",
         "Orion"
-      ]
+      ],
+      "Location": {
+        "X": "2",
+        "Y": "-1"
+      }
     },
     {
       "Name": "Virgo",
@@ -152,7 +176,11 @@
         "Virgo",
         "Libra",
         "Gemini"
-      ]
+      ],
+      "Location": {
+        "X": "2",
+        "Y": "2"
+      }
     },
     {
       "Name": "Libra",
@@ -173,7 +201,11 @@
         "Virgo",
         "Scorpio",
         "Taurus"
-      ]
+      ],
+      "Location": {
+        "X": "-1",
+        "Y": "2"
+      }
     }
   ],
   "Ships": [

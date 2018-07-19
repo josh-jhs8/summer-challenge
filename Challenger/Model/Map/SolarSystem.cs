@@ -11,5 +11,7 @@ namespace Challenger.Model.Map
         public List<Planet> Planets { get; set; } = new List<Planet>();
 
         public List<string> Hyperlanes { get; set; } = new List<string>();
+
+        public Location Location { get; set; } = new Location();
     }
 }
