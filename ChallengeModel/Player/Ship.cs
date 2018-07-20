@@ -1,4 +1,4 @@
-﻿namespace Challenger.Model.Player
+﻿namespace ChallengeModel.Player
 {
     public class Ship
     {

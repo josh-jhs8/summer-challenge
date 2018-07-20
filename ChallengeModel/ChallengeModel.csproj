@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CEFCD90B-DDFE-42B7-B2E1-AAADC923DC92}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Challenger</RootNamespace>
-    <AssemblyName>Challenger</AssemblyName>
+    <ProjectGuid>{DE79382B-F19A-41D0-AA89-F7C3724FB0CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChallengeModel</RootNamespace>
+    <AssemblyName>ChallengeModel</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,25 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\ChallengeManager.cs" />
-    <Compile Include="Logic\CommandResultDto.cs" />
-    <Compile Include="Logic\ShipManager.cs" />
-    <Compile Include="Model\ChallengeConfiguration.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Map\Location.cs" />
+    <Compile Include="Map\Planet.cs" />
+    <Compile Include="Map\SolarSystem.cs" />
+    <Compile Include="Map\Star.cs" />
+    <Compile Include="PlayerAction\Command.cs" />
+    <Compile Include="PlayerAction\CommandResult.cs" />
+    <Compile Include="Player\Ship.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="Configurations\Ardvark.json" />
-    <None Include="Configurations\Baboon.json" />
-    <None Include="Configurations\Basic.json" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ChallengeModel\ChallengeModel.csproj">
-      <Project>{de79382b-f19a-41d0-aa89-f7c3724fb0ca}</Project>
-      <Name>ChallengeModel</Name>
-    </ProjectReference>
+    <None Include="ChallengeModel.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

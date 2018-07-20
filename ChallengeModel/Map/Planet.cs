@@ -1,4 +1,4 @@
-﻿namespace Challenger.Model.Map
+﻿namespace ChallengeModel.Map
 {
     public class Planet
     {

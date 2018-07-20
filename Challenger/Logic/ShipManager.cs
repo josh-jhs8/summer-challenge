@@ -1,13 +1,11 @@
-﻿using Challenger.Model;
-using Challenger.Model.Map;
-using Challenger.Model.Player;
-using Challenger.Model.PlayerAction;
+﻿using ChallengeModel.Map;
+using ChallengeModel.Player;
+using ChallengeModel.PlayerAction;
+using Challenger.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenger.Logic
 {

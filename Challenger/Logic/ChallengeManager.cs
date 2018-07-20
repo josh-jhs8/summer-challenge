@@ -1,5 +1,5 @@
 ﻿using Challenger.Model;
-using Challenger.Model.PlayerAction;
+using ChallengeModel.PlayerAction;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Josh Slater</authors>
+    <owners>Josh Slater</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Object Model for Challenger</description>
+    <releaseNotes>Create model as nuget package.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+  </metadata>
+</package>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Challenger.Model.Map
+namespace ChallengeModel.Map
 {
     public class SolarSystem
     {

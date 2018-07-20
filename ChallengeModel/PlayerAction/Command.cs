@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Challenger.Model.PlayerAction
+namespace ChallengeModel.PlayerAction
 {
     public class Command
     {
