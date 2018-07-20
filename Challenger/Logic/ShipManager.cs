@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace Challenger.Logic
 {
@@ -55,6 +56,8 @@ namespace Challenger.Logic
             if (!currentSystem.Hyperlanes.Contains(args[0])) throw new Exception($"{args[0]} is not a valid destination for a move command.");
 
             ship.Location = args[0];
+            //Moving takes a while
+            Thread.Sleep(500);
             return new CommandResultDto
             {
                 Success = true,
