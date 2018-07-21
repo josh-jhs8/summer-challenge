@@ -31,6 +31,7 @@ namespace Challenger.Logic
             switch (command.Type)
             {
                 case "Ship": return _shipManager.ProcessCommand(command);
+                case "State": return _stateManager.ProcessCommand(command);
                 default: return new CommandResultDto
                 {
                     Success = false,
