@@ -48,7 +48,9 @@
     <Compile Include="Logic\ChallengeManager.cs" />
     <Compile Include="Logic\CommandResultDto.cs" />
     <Compile Include="Logic\ShipManager.cs" />
+    <Compile Include="Logic\StateManager.cs" />
     <Compile Include="Model\ChallengeConfiguration.cs" />
+    <Compile Include="Model\ChallengeState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

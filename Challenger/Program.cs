@@ -49,7 +49,8 @@ namespace Challenger
             {
                 Console.WriteLine("New Connection means new Challenge!");
                 var config = ChallengeConfiguration.GetChallengeConfiguration(_configPath);
-                var manager = new ChallengeManager(config);
+                var state = ChallengeState.GetStateFromConfiguration(config);
+                var manager = new ChallengeManager(state);
                 while (true)
                 {
                     try

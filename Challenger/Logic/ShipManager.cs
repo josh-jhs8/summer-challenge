@@ -5,18 +5,18 @@ using Challenger.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Challenger.Logic
 {
     public class ShipManager
     {
-        private ChallengeConfiguration _config;
+        private ChallengeState _state;
 
-        public ShipManager(ChallengeConfiguration config)
+        public ShipManager(ChallengeState state)
         {
-            _config = config;
+            _state = state;
         }
 
         public CommandResultDto ProcessCommand(Command command)
@@ -26,7 +26,7 @@ namespace Challenger.Logic
                 if (command.Action == "List") return List();
 
                 if (command.Type != "Ship") throw new Exception("This is not a valid command for a ship.");
-                if (!_config.Ships.Any(s => s.Name == command.Subject)) throw new Exception("This ship does not exist.");
+                if (!_state.Ships.ContainsKey(command.Subject)) throw new Exception("This ship does not exist.");
 
                 switch (command.Action)
                 {
@@ -41,7 +41,7 @@ namespace Challenger.Logic
                 {
                     Success = false,
                     Message = e.Message,
-                    ResultObjectJson = null,
+                    ResultObjectJson = "",
                     ResultObjectType = typeof(object)
                 };
             }
@@ -51,13 +51,24 @@ namespace Challenger.Logic
         {
             if (args.Count < 1) throw new Exception("A destination must be provided for a move command.");
 
-            var ship = _config.Ships.First(s => s.Name == shipName);
-            var currentSystem = _config.SolarSystems.First(ss => ss.Name == ship.Location);
+            var ship = _state.Ships[shipName];
+            if (ship.Status != "Awaiting Command") throw new Exception("Cannot move ship until it has finished current action.");
+
+            var currentSystem = _state.SolarSystems[ship.Location];
             if (!currentSystem.Hyperlanes.Contains(args[0])) throw new Exception($"{args[0]} is not a valid destination for a move command.");
 
-            ship.Location = args[0];
-            //Moving takes a while
-            Thread.Sleep(500);
+            ship.Status = $"Moving to {args[0]}";
+            _state.Ships.AddOrUpdate(ship.Name, ship, (n, s) => ship);
+
+            var completeMove = new Task(() =>
+            {
+                Thread.Sleep(500);
+                ship.Status = "Awaiting Command";
+                ship.Location = args[0];
+                _state.Ships.AddOrUpdate(ship.Name, ship, (n, s) => ship);
+            });
+
+            completeMove.Start();
             return new CommandResultDto
             {
                 Success = true,
@@ -69,9 +80,11 @@ namespace Challenger.Logic
 
         private CommandResultDto Observe(string shipName)
         {
-            var ship = _config.Ships.First(s => s.Name == shipName);
-            var system = _config.SolarSystems.First(ss => ss.Name == ship.Location);
+            var ship = _state.Ships[shipName];
+            if (ship.Status != "Awaiting Command") throw new Exception("Cannot accept observe command until previous action is finished.");
 
+            var system = _state.SolarSystems[ship.Location];
+            _state.ObservedSystems.AddOrUpdate(system.Name, true, (n, b) => true);
             return new CommandResultDto
             {
                 Success = true,
@@ -83,11 +96,13 @@ namespace Challenger.Logic
 
         private CommandResultDto List()
         {
+            var ships = new List<Ship>();
+            foreach (var shipEntry in _state.Ships) ships.Add(shipEntry.Value);
             return new CommandResultDto
             {
                 Success = true,
                 Message = "Listing all current ships",
-                ResultObjectJson = JsonConvert.SerializeObject(_config.Ships),
+                ResultObjectJson = JsonConvert.SerializeObject(ships),
                 ResultObjectType = typeof(List<Ship>)
             };
         }

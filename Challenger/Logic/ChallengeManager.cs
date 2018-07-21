@@ -1,23 +1,21 @@
 ﻿using Challenger.Model;
 using ChallengeModel.PlayerAction;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Challenger.Logic
 {
     public class ChallengeManager
     {
-        private ChallengeConfiguration _config;
+        private ChallengeState _state;
         private ShipManager _shipManager;
+        private StateManager _stateManager;
 
-        public ChallengeManager(ChallengeConfiguration config)
+        public ChallengeManager(ChallengeState state)
         {
-            _config = config;
-            _shipManager = new ShipManager(config);
+            _state = state;
+            _shipManager = new ShipManager(state);
+            _stateManager = new StateManager(state);
         }
 
         public byte[] ProcessCommand(byte[] command)
