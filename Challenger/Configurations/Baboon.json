@@ -17,7 +17,7 @@
       "Stars": [],
       "Planets": [],
       "Hyperlanes": [
-        "Neck",
+        "Head",
         "Left Shoulder",
         "Right Shoulder",
         "Torso"
@@ -162,6 +162,15 @@
         {
           "Name": "Micro Explorer the First",
           "Location": "Head"
+        }
+      ]
+    },
+    {
+      "Name": "Player 2",
+      "Ships": [
+        {
+          "Name": "Micro Explorer the Second",
+          "Location": "Right Foot"
         }
       ]
     }

@@ -29,7 +29,11 @@ namespace Challenger.Model
         {
             var state = new ChallengeState();
             foreach (var ss in config.SolarSystems) state.SolarSystems.AddOrUpdate(ss.Name, ss, (name, sys) => sys);
-            foreach (var p in config.Players) state.Players.AddOrUpdate(p.Name, new ChallengeEmpire(p), (name, player) => player);
+            foreach (var p in config.Players)
+            {
+                state.Players.AddOrUpdate(p.Name, new ChallengeEmpire(p), (name, player) => player);
+                state.ObservedSystems.AddOrUpdate(p.Name, new List<string>(), (n, l) => new List<string>());
+            }
             return state;
         }
 
