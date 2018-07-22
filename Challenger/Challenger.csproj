@@ -50,6 +50,7 @@
     <Compile Include="Logic\ShipManager.cs" />
     <Compile Include="Logic\StateManager.cs" />
     <Compile Include="Model\ChallengeConfiguration.cs" />
+    <Compile Include="Model\ChallengeEmpire.cs" />
     <Compile Include="Model\ChallengeState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

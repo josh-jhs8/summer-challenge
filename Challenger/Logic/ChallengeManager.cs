@@ -7,15 +7,13 @@ namespace Challenger.Logic
 {
     public class ChallengeManager
     {
-        private ChallengeState _state;
         private ShipManager _shipManager;
         private StateManager _stateManager;
 
-        public ChallengeManager(ChallengeState state)
+        public ChallengeManager(ChallengeState state, string playerName)
         {
-            _state = state;
-            _shipManager = new ShipManager(state);
-            _stateManager = new StateManager(state);
+            _shipManager = new ShipManager(state, playerName);
+            _stateManager = new StateManager(state, playerName);
         }
 
         public byte[] ProcessCommand(byte[] command)

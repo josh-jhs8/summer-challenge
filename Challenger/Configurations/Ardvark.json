@@ -208,10 +208,15 @@
       }
     }
   ],
-  "Ships": [
+  "Players": [
     {
-      "Name": "HMS Britannia",
-      "Location": "Sol"
+      "Name": "Player 1",
+      "Ships": [
+        {
+          "Name": "HMS Britannia",
+          "Location": "Sol"
+        }
+      ]
     }
   ]
 }

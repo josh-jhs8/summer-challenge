@@ -3,6 +3,8 @@ using Challenger.Model;
 using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Challenger
@@ -32,25 +34,43 @@ namespace Challenger
                 using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
                 {
                     socket.Bind(localEndpoint);
-
+                    
                     while (true)
                     {
-                        socket.Listen(100);
-                        var connection = socket.Accept();
-                        var task = ManageConnection(connection);
+                        Console.WriteLine("Setting up a new Challenge...");
+                        var config = ChallengeConfiguration.GetChallengeConfiguration(_configPath);
+                        var state = ChallengeState.GetStateFromConfiguration(config);
+                        var name = state.GetPlayerNames();
+
+                        for (var i = 0; i < state.Players.Count; i++)
+                        {
+                            socket.Listen(100);
+                            var connection = socket.Accept();
+                            var task = ManageConnection(connection, state, name[i]);
+                        }
+                        state.Flags.AddOrUpdate("Ready", true, (x, y) => true);
+                        Console.WriteLine("Begin the challenge!");
                     }
                 }
             });
         }
 
-        private static Task ManageConnection(Socket connection)
+        private static Task ManageConnection(Socket connection, ChallengeState state, string playerName)
         {
             return Task.Run(() =>
             {
-                Console.WriteLine("New Connection means new Challenge!");
-                var config = ChallengeConfiguration.GetChallengeConfiguration(_configPath);
-                var state = ChallengeState.GetStateFromConfiguration(config);
-                var manager = new ChallengeManager(state);
+                Console.WriteLine("New Connection means new Player!");
+                var manager = new ChallengeManager(state, playerName);
+                while (true)
+                {
+                    if (state.Flags["Ready"])
+                    {
+                        var begin = Encoding.UTF8.GetBytes("Begin");
+                        connection.Send(begin);
+                        break;
+                    }
+                    Thread.Sleep(100);
+                }
                 while (true)
                 {
                     try

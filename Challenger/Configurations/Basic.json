@@ -76,10 +76,15 @@
       }
     }
   ],
-  "Ships": [
+  "Players": [
     {
-      "Name": "Player Ship 1",
-      "Location": "Alpha System"
+      "Name": "Player 1",
+      "Ships": [
+        {
+          "Name": "Player Ship 1",
+          "Location": "Alpha System"
+        }
+      ]
     }
   ]
 }

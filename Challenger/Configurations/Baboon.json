@@ -155,10 +155,15 @@
       }
     }
   ],
-  "Ships": [
+  "Players": [
     {
-      "Name": "Micro Explorer the First",
-      "Location": "Head"
+      "Name": "Player 1",
+      "Ships": [
+        {
+          "Name": "Micro Explorer the First",
+          "Location": "Head"
+        }
+      ]
     }
   ]
 }

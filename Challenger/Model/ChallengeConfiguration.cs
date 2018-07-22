@@ -10,7 +10,7 @@ namespace Challenger.Model
     {
         public List<SolarSystem> SolarSystems { get; set; } = new List<SolarSystem>();
 
-        public List<Ship> Ships { get; set; } = new List<Ship>();
+        public List<Empire> Players { get; set; } = new List<Empire>();
 
         public static ChallengeConfiguration GetChallengeConfiguration(string path)
         {
