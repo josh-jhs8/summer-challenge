@@ -34,32 +34,33 @@ namespace Challenger
                 using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
                 {
                     socket.Bind(localEndpoint);
-                    
-                    while (true)
-                    {
-                        Console.WriteLine("Setting up a new Challenge...");
-                        var config = ChallengeConfiguration.GetChallengeConfiguration(_configPath);
-                        var state = ChallengeState.GetStateFromConfiguration(config);
-                        var name = state.GetPlayerNames();
-
-                        for (var i = 0; i < state.Players.Count; i++)
-                        {
-                            socket.Listen(100);
-                            var connection = socket.Accept();
-                            var task = ManageConnection(connection, state, name[i]);
-                        }
-                        state.Flags.AddOrUpdate("Ready", true, (x, y) => true);
-                        Console.WriteLine("Begin the challenge!");
-                    }
+                    while (true) ManageChallenge(socket);
                 }
             });
+        }
+
+        private static void ManageChallenge(Socket listener)
+        {
+            Console.WriteLine("Setting up a new Challenge...");
+            var config = ChallengeConfiguration.GetChallengeConfiguration(_configPath);
+            var state = ChallengeState.GetStateFromConfiguration(config);
+            var name = state.GetPlayerNames();
+
+            for (var i = 0; i < state.Players.Count; i++)
+            {
+                listener.Listen(100);
+                var connection = listener.Accept();
+                var task = ManageConnection(connection, state, name[i]);
+            }
+            state.Flags.AddOrUpdate("Ready", true, (x, y) => true);
+            Console.WriteLine("Begin the challenge!");
         }
 
         private static Task ManageConnection(Socket connection, ChallengeState state, string playerName)
         {
             return Task.Run(() =>
             {
-                Console.WriteLine("New Connection means new Player!");
+                Console.WriteLine($"{playerName} connected!");
                 var manager = new ChallengeManager(state, playerName);
                 while (true)
                 {

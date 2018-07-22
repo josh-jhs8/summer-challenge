@@ -6,6 +6,6 @@ namespace ChallengeModel.Player
     {
         public string Name { get; set; }
 
-        public List<Ship> Ships { get; set; }
+        public List<Ship> Ships { get; set; } = new List<Ship>();
     }
 }
