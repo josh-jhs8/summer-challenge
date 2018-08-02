@@ -1,0 +1,107 @@
+﻿{
+  "SolarSystems": [
+    {
+      "Name": "A",
+      "Hyperlanes": [ "B", "C" ],
+      "Location": {
+        "X": "0",
+        "Y": "8"
+      }
+    },
+    {
+      "Name": "B",
+      "Hyperlanes": [ "A", "B1" ],
+      "Location": {
+        "X": "1",
+        "Y": "7"
+      }
+    },
+    {
+      "Name": "C",
+      "Hyperlanes": [ "A", "D" ],
+      "Location": {
+        "X": "-1",
+        "Y": "7"
+      }
+    },
+    {
+      "Name": "B1",
+      "Hyperlanes": [ "B" ],
+      "Location": {
+        "X": "2",
+        "Y": "6"
+      }
+    },
+    {
+      "Name": "D",
+      "Hyperlanes": [ "C", "E", "D1" ],
+      "Location": {
+        "X": "-2",
+        "Y": "6"
+      }
+    },
+    {
+      "Name": "E",
+      "Hyperlanes": [ "D", "F" ],
+      "Location": {
+        "X": "-3",
+        "Y": "5"
+      }
+    },
+    {
+      "Name": "D1",
+      "Hyperlanes": [ "D", "D2" ],
+      "Location": {
+        "X": "-2",
+        "Y": "4"
+      }
+    },
+    {
+      "Name": "D2",
+      "Hyperlanes": [ "D1" ],
+      "Location": {
+        "X": "-1",
+        "Y": "3"
+      }
+    },
+    {
+      "Name": "F",
+      "Hyperlanes": [ "E", "G" ],
+      "Location": {
+        "X": "-4",
+        "Y": "4"
+      }
+    },
+    {
+      "Name": "G",
+      "Hyperlanes": [ "F", "H" ],
+      "Location": {
+        "X": "-5",
+        "Y": "3"
+      }
+    },
+    {
+      "Name": "H",
+      "Hyperlanes": [ "G" ],
+      "Location": {
+        "X": "-6",
+        "Y": "2"
+      }
+    }
+  ],
+  "Players": [
+    {
+      "Name": "Player 1",
+      "Ships": [
+        {
+          "Name": "Ship 1",
+          "Location": "A"
+        },
+        {
+          "Name": "Ship 2",
+          "Location": "A"
+        }
+      ]
+    }
+  ]
+}
